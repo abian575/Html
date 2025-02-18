@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المدرسة الإلكترونية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>مرحبًا بكم في المدرسة الإلكترونية</h1>
+
+        <!-- الصف التاسع -->
+        <div class="grade">
+            <button class="toggle-btn" onclick="toggleSection('ninth')">الصف التاسع ⬇</button>
+            <div id="ninth" class="subjects hidden">
+                <!-- الرياضيات -->
+                <button class="subject-btn" onclick="toggleSection('math9')">■ الرياضيات ⬇</button>
+                <div id="math9" class="subject-content hidden">
+                    <button onclick="toggleEditor('math9-text')">🖋 إضافة / تعديل الشرح الكتابي</button>
+                    <textarea id="math9-text" class="hidden" placeholder="اكتب الشرح هنا..."></textarea>
+                    <button class="hidden" id="save-math9" onclick="saveText('math9-text')">💾 حفظ</button>
+
+                    <p>📹 تحميل فيديو:</p>
+                    <input type="file" id="video-math9" accept="video/*">
+                    <button onclick="uploadFile('video-math9')">📤 رفع الفيديو</button>
+
+                    <p>📄 تحميل PDF:</p>
+                    <input type="file" id="pdf-math9" accept="application/pdf">
+                    <button onclick="uploadFile('pdf-math9')">📤 رفع PDF</button>
+                </div>
+
+                <!-- اللغة العربية -->
+                <button class="subject-btn" onclick="toggleSection('arabic9')">■ اللغة العربية ⬇</button>
+                <div id="arabic9" class="subject-content hidden">
+                    <button onclick="toggleEditor('arabic9-text')">🖋 إضافة / تعديل الشرح الكتابي</button>
+                    <textarea id="arabic9-text" class="hidden" placeholder="اكتب الشرح هنا..."></textarea>
+                    <button class="hidden" id="save-arabic9" onclick="saveText('arabic9-text')">💾 حفظ</button>
+
+                    <p>📹 تحميل فيديو:</p>
+                    <input type="file" id="video-arabic9" accept="video/*">
+                    <button onclick="uploadFile('video-arabic9')">📤 رفع الفيديو</button>
+
+                    <p>📄 تحميل PDF:</p>
+                    <input type="file" id="pdf-arabic9" accept="application/pdf">
+                    <button onclick="uploadFile('pdf-arabic9')">📤 رفع PDF</button>
+                </div>
+
+                <!-- الإنجليزي -->
+                <button class="subject-btn" onclick="toggleSection('english9')">■ الإنجليزي ⬇</button>
+                <div id="english9" class="subject-content hidden">
+                    <button onclick="toggleEditor('english9-text')">🖋 إضافة / تعديل الشرح الكتابي</button>
+                    <textarea id="english9-text" class="hidden" placeholder="اكتب الشرح هنا..."></textarea>
+                    <button class="hidden" id="save-english9" onclick="saveText('english9-text')">💾 حفظ</button>
+
+                    <p>📹 تحميل فيديو:</p>
+                    <input type="file" id="video-english9" accept="video/*">
+                    <button onclick="uploadFile('video-english9')">📤 رفع الفيديو</button>
+
+                    <p>📄 تحميل PDF:</p>
+                    <input type="file" id="pdf-english9" accept="application/pdf">
+                    <button onclick="uploadFile('pdf-english9')">📤 رفع PDF</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- الصف الثالث الثانوي -->
+        <div class="grade">
+            <button class="toggle-btn" onclick="toggleSection('twelfth')">الصف الثالث الثانوي ⬇</button>
+            <div id="twelfth" class="subjects hidden">
+                <!-- الجبر والهندسة -->
+                <button class="subject-btn" onclick="toggleSection('math12')">■ الجبر والهندسة ⬇</button>
+                <div id="math12" class="subject-content hidden">
+                    <button onclick="toggleEditor('math12-text')">🖋 إضافة / تعديل الشرح الكتابي</button>
+                    <textarea id="math12-text" class="hidden" placeholder="اكتب الشرح هنا..."></textarea>
+                    <button class="hidden" id="save-math12" onclick="saveText('math12-text')">💾 حفظ</button>
+
+                    <p>📹 تحميل فيديو:</p>
+                    <input type="file" id="video-math12" accept="video/*">
+                    <button onclick="uploadFile('video-math12')">📤 رفع الفيديو</button>
+
+                    <p>📄 تحميل PDF:</p>
+                    <input type="file" id="pdf-math12" accept="application/pdf">
+                    <button onclick="uploadFile('pdf-math12')">📤 رفع PDF</button>
+                </div>
+
+                <!-- الفيزياء -->
+                <button class="subject-btn" onclick="toggleSection('physics12')">■ الفيزياء ⬇</button>
+                <div id="physics12" class="subject-content hidden">
+                    <button onclick="toggleEditor('physics12-text')">🖋 إضافة / تعديل الشرح الكتابي</button>
+                    <textarea id="physics12-text" class="hidden" placeholder="اكتب الشرح هنا..."></textarea>
+                    <button class="hidden" id="save-physics12" onclick="saveText('physics12-text')">💾 حفظ</button>
+
+                    <p>📹 تحميل فيديو:</p>
+                    <input type="file" id="video-physics12" accept="video/*">
+                    <button onclick="uploadFile('video-physics12')">📤 رفع الفيديو</button>
+
+                    <p>📄 تحميل PDF:</p>
+                    <input type="file" id="pdf-physics12" accept="application/pdf">
+                    <button onclick="uploadFile('pdf-physics12')">📤 رفع PDF</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            document.getElementById(id).classList.toggle('hidden');
+        }
+
+        function toggleEditor(id) {
+            let textArea = document.getElementById(id);
+            let saveBtn = document.getElementById('save-' + id);
+            textArea.classList.toggle('hidden');
+            saveBtn.classList.toggle('hidden');
+        }
+
+        function saveText(id) {
+            let text = document.getElementById(id).value;
+            localStorage.setItem(id, text);
+            alert("تم حفظ الشرح!");
+        }
+
+        function uploadFile(id) {
+            let fileInput = document.getElementById(id);
+            if (fileInput.files.length > 0) {
+                alert("تم رفع الملف بنجاح: " + fileInput.files[0].name);
+            } else {
+                alert("يرجى اختيار ملف قبل الرفع.");
+            }
+        }
+    </script>
+
+</body>
+</html>content://com.android.externalstorage.documents/tree/primary%3Aindex.html::primary:index.html/courses.html
